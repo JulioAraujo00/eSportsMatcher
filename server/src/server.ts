@@ -2,6 +2,14 @@ import express from "express";
 
 const app = express();
 
+app.get("/games", (req, res) => {
+  return res.json([]);
+});
+
+app.post("/ads", (req, res) => {
+  return res.status(201).json("createAdd");
+});
+
 app.get("/ads", (request, response) => {
   response.json([
     { id: 1, name: "Advertising" },
