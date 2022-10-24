@@ -1,9 +1,22 @@
-import express from "express";
+import express, { request } from "express";
+import { PrismaClient } from "@prisma/client";
 
 const app = express();
+const prisma = new PrismaClient({
+  log: ["query"],
+});
 
-app.get("/games", (req, res) => {
-  return res.json([]);
+app.get("/games", async (req, res) => {
+  const games = await prisma.game.findMany({
+    include: {
+      _count: {
+        select: {
+          ads: true,
+        },
+      },
+    },
+  });
+  return res.json(games);
 });
 
 app.post("/ads", (req, res) => {
@@ -27,4 +40,4 @@ app.get("/ads/:id/discord", (request, response) => {
   response.json([]);
 });
 
-app.listen(3333);
+app.listen(3333, () => console.log("listening"));
