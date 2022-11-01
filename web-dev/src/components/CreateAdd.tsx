@@ -1,3 +1,4 @@
+import * as Dialog from "@radix-ui/react-dialog";
 import { MagnifyingGlassPlus } from "phosphor-react";
 
 const messages = {
@@ -17,10 +18,10 @@ export const CreateAdd = () => {
           <span className="text-zinc-400">{messages.foundPlayersByAdds}</span>
         </div>
 
-        <button className=" flex gap-3 py-3 px-4 bg-violet-500 hover:bg-violet-600 duration-75 text-white rounded">
+        <Dialog.Trigger className=" flex gap-3 py-3 px-4 bg-violet-500 hover:bg-violet-600 duration-75 text-white rounded">
           <MagnifyingGlassPlus size={24} />
           {messages.addsButton}
-        </button>
+        </Dialog.Trigger>
       </div>
     </div>
   );
