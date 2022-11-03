@@ -78,13 +78,48 @@ export const Form = () => {
                 <label htmlFor="weekDays" className="flex flex-col gap-2 py-2">
                   {messages.weekDays}
                 </label>
-                <button className="w-10 p-1 m-1 bg-zinc-900 rounded">1</button>
-                <button className="w-10 p-1 m-1 bg-zinc-900 rounded">2</button>
-                <button className="w-10 p-1 m-1 bg-zinc-900 rounded">3</button>
-                <button className="w-10 p-1 m-1 bg-zinc-900 rounded">4</button>
-                <button className="w-10 p-1 m-1 bg-zinc-900 rounded">5</button>
-                <button className="w-10 p-1 m-1 bg-zinc-900 rounded">6</button>
-                <button className="w-10 p-1 m-1 bg-zinc-900 rounded">7</button>
+                <button
+                  type="button"
+                  className="w-10 p-1 m-1 bg-zinc-900 rounded"
+                >
+                  1
+                </button>
+                <button
+                  type="button"
+                  className="w-10 p-1 m-1 bg-zinc-900 rounded"
+                >
+                  2
+                </button>
+                <button
+                  type="button"
+                  className="w-10 p-1 m-1 bg-zinc-900 rounded"
+                >
+                  3
+                </button>
+                <button
+                  type="button"
+                  className="w-10 p-1 m-1 bg-zinc-900 rounded"
+                >
+                  4
+                </button>
+                <button
+                  type="button"
+                  className="w-10 p-1 m-1 bg-zinc-900 rounded"
+                >
+                  5
+                </button>
+                <button
+                  type="button"
+                  className="w-10 p-1 m-1 bg-zinc-900 rounded"
+                >
+                  6
+                </button>
+                <button
+                  type="button"
+                  className="w-10 p-1 m-1 bg-zinc-900 rounded"
+                >
+                  7
+                </button>
               </div>
               <div className="py-2">
                 <label htmlFor="hourStart">Qual horário?</label>
@@ -99,17 +134,20 @@ export const Form = () => {
               <Input type="checkbox" />
               {messages.voiceChat}
             </div>
-            <footer className="flex place-content-evenly py-4">
+            <footer className="flex place-content-evenly py-4 font-semibold">
               <div>
-                <button className="bg-zinc-900 w-40 p-4 text-center rounded">
+                <Dialog.Close
+                  type="button"
+                  className="bg-zinc-900 w-40 p-4 text-center rounded hover:bg-zinc-600"
+                >
                   {messages.cancel}
-                </button>
+                </Dialog.Close>
               </div>
 
               <div>
                 <button
                   type="submit"
-                  className="flex items-center bg-violet-500 hover:bg-violet-600 active:bg-violet-700 w-38 p-4 text-center rounded"
+                  className="flex items-center bg-violet-500 hover:bg-violet-600  w-38 p-4 text-center rounded"
                 >
                   {" "}
                   <GameController className="mr-2" />
